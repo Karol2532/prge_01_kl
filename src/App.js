@@ -7,8 +7,6 @@ const lista_uzyt = [
   { imie: "moni" },
 ];
 
-console.log(lista_uzyt);
-
 function App() {
   return (
     <div className="App">
