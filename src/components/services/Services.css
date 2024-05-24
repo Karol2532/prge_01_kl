@@ -1,0 +1,33 @@
+.services_title {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 48px;
+  font-weight: 600;
+  margin-top: 60px;
+  margin-left: 60px;
+  background-color: aqua;
+}
+
+.services_bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: orange;
+}
+.services {
+  background-color: yellow;
+  padding: 10px;
+}
+.services_obj {
+  background-color: plum;
+  padding: 10px;
+  margin: 10px;
+}
+
+.obrazki {
+  background-color: brown;
+  width: 300px;
+  height: 300px;
+  margin: 100px 50px;
+}
