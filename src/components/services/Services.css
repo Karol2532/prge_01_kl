@@ -1,11 +1,11 @@
-.services_title {
+.services {
   display: flex;
-  justify-content: flex-start;
-  font-size: 48px;
-  font-weight: 600;
-  margin-top: 60px;
-  margin-left: 60px;
-  background-color: aqua;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("backround.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .services_bottom {
@@ -13,21 +13,47 @@
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  background-color: orange;
-}
-.services {
-  background-color: yellow;
-  padding: 10px;
-}
-.services_obj {
-  background-color: plum;
-  padding: 10px;
-  margin: 10px;
 }
 
-.obrazki {
-  background-color: brown;
+.services_option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20px;
+  text-decoration: none;
+}
+
+.services_icon {
   width: 300px;
   height: 300px;
-  margin: 100px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00ffff;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.services_icon:hover {
+  background-color: #ffffff;
+  color: #00ffff;
+  border: 8px solid #00ffff;
+}
+.workericon {
+  width: 500px;
+  height: 400px;
+}
+.workplaceicon {
+  width: 200px;
+  height: 200px;
+}
+.locationicon {
+  width: 200px;
+  height: 200px;
+}
+
+.services_label {
+  font-size: 24px;
+  color: #000;
+  position: absolute;
+  margin: 250px;
 }
