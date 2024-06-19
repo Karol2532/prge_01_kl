@@ -12,7 +12,7 @@ import {
 import "leaflet/dist/leaflet.css";
 import axios from "axios";
 
-// import MarkerPlacement from "./MarkerPlacement";
+import MarkerPlacement from "./MarkerPlacement";
 
 function Map() {
   const [workers, setWorkers] = useState(null);
@@ -69,6 +69,16 @@ function Map() {
     getData();
   }, []);
 
+  const workerPoints = workers
+    ? workers.features.map((feature) => ({
+        lat: feature.geometry.coordinates[1],
+        lng: feature.geometry.coordinates[0],
+        name: feature.properties.name,
+        lastname: feature.properties.lastname,
+        city: feature.properties.city,
+      }))
+    : [];
+
   return (
     <div className="map">
       <MapContainer center={[52.27, 19.24]} zoom={6}>
@@ -96,6 +106,7 @@ function Map() {
               ""
             )}
           </LayersControl.Overlay>
+          <MarkerPlacement points={workerPoints} />
           {/* <MarkerPlacement /> */}
         </LayersControl>
       </MapContainer>
