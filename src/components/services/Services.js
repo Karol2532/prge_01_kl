@@ -9,7 +9,7 @@ function Services() {
   return (
     <div className="services">
       <div className="services_bottom">
-        <Link to="home" className="services_option">
+        <Link to="workerlist" className="services_option">
           <div className="services_icon">
             <img className="workericon" src={workericon} alt="pracownicy" />
           </div>

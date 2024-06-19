@@ -1,0 +1,27 @@
+.table-container {
+  padding: 20px;
+}
+
+.workers-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.workers-table th,
+.workers-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.workers-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #f2f2f2;
+  color: black;
+  cursor: pointer;
+}
+
+.workers-table th span {
+  margin-left: 8px;
+}
