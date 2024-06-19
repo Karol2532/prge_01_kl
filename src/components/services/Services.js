@@ -11,14 +11,14 @@ function Services() {
       <div className="services_bottom">
         <Link to="workerlist" className="services_option">
           <div className="services_icon">
-            <img className="workericon" src={workericon} alt="pracownicy" />
+            <img className="worker3icon" src={workericon} alt="pracownicy" />
           </div>
           <div className="services_label">Pracownicy</div>
         </Link>
-        <Link to="home" className="services_option">
+        <Link to="workplacelist" className="services_option">
           <div className="services_icon">
             <img
-              className="workplaceicon"
+              className="workplace3icon"
               src={workplaceicon}
               alt="miejsca pracy"
             />
@@ -28,7 +28,7 @@ function Services() {
         <Link to="map" className="services_option">
           <div className="services_icon">
             <img
-              className="locationicon"
+              className="location3icon"
               src={locationicon}
               alt="lokalizacja"
             />

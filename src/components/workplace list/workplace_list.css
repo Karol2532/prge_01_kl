@@ -1,0 +1,53 @@
+.table-container {
+  margin: 20px;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.workericon {
+  width: 55px;
+  height: 55px;
+}
+
+.workericon:hover {
+  background-color: #00ffff;
+  border: 1px solid #000000;
+  border-radius: 6px;
+}
+
+.locationicon {
+  width: 50px;
+  height: 50px;
+}
+
+.locationicon:hover {
+  background-color: #00ffff;
+  border: 1px solid #000000;
+  border-radius: 6px;
+}
+
+.workplaces-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.workplaces-table th,
+.workplaces-table td {
+  border: 1px solid #c1c1c1;
+  padding: 8px;
+}
+
+.workplaces-table th {
+  background-color: #00ffff;
+  text-align: left;
+}

@@ -2,37 +2,36 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useTable, useSortBy } from "react-table";
 import { Link } from "react-router-dom";
-import workplace1icon from "./workplaces.png";
-import location1icon from "./location.png";
-import "./worker_list.css"; // Plik CSS do stylizacji tabeli
+import worker2icon from "./workers.png";
+import location2icon from "./location.png";
+import "./workplace_list.css";
 
-function WorkersTable() {
-  const [workers, setWorkers] = useState([]);
+function WorkplacesTable() {
+  const [workplaces, setWorkplaces] = useState([]);
 
   useEffect(() => {
-    const fetchWorkers = async () => {
+    const fetchWorkplaces = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/geoserver/prge/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=prge%3Aworkers&maxFeatures=50&outputFormat=application%2Fjson"
+          "http://localhost:8080/geoserver/prge/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=prge%3Aworkplaces&maxFeatures=50&outputFormat=application%2Fjson"
         );
-        const workersData = response.data.features.map((feature, index) => ({
+        const workplacesData = response.data.features.map((feature, index) => ({
           number: index + 1,
           name: feature.properties.name,
-          lastname: feature.properties.lastname,
           location: feature.properties.city,
-          function: feature.properties.function,
+          country: feature.properties.country,
           idwork: feature.properties.id_place,
         }));
-        setWorkers(workersData);
+        setWorkplaces(workplacesData);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
 
-    fetchWorkers();
+    fetchWorkplaces();
   }, []);
 
-  const data = React.useMemo(() => workers, [workers]);
+  const data = React.useMemo(() => workplaces, [workplaces]);
 
   const columns = React.useMemo(
     () => [
@@ -41,20 +40,16 @@ function WorkersTable() {
         accessor: "number",
       },
       {
-        Header: "Imię",
+        Header: "Nazwa",
         accessor: "name",
-      },
-      {
-        Header: "Nazwisko",
-        accessor: "lastname",
       },
       {
         Header: "Miasto",
         accessor: "location",
       },
       {
-        Header: "Funkcja",
-        accessor: "function",
+        Header: "Kraj",
+        accessor: "country",
       },
       {
         Header: "Numer oddziału",
@@ -72,25 +67,21 @@ function WorkersTable() {
   return (
     <div className="table-container">
       <div className="table-header">
-        <h1>Baza danych o pracownikach</h1>
+        <h1>Baza danych o oddziałach</h1>
         <div className="buttons">
           <Link to="/services/map">
             <img
               className="locationicon"
-              src={location1icon}
+              src={location2icon}
               alt="lokalizacja"
             />
           </Link>
-          <Link to="/services/workplacelist">
-            <img
-              className="workplaceicon"
-              src={workplace1icon}
-              alt="miejsca pracy"
-            />
+          <Link to="/services/workerlist">
+            <img className="workericon" src={worker2icon} alt="pracownicy" />
           </Link>
         </div>
       </div>
-      <table {...getTableProps()} className="workers-table">
+      <table {...getTableProps()} className="workplaces-table">
         <thead>
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
@@ -126,4 +117,4 @@ function WorkersTable() {
   );
 }
 
-export default WorkersTable;
+export default WorkplacesTable;

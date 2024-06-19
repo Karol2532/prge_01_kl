@@ -5,6 +5,7 @@ import Services from "./components/services/Services";
 import Map from "./components/map/Map";
 import Dashboard from "./components/dashboard/Dashboard";
 import WorkersTable from "./components/worker list/worker_list";
+import WorkplacesTable from "./components/workplace list/workplace_list";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: "/services/workerlist",
     element: <WorkersTable />,
+  },
+  {
+    path: "/services/workplacelist",
+    element: <WorkplacesTable />,
   },
 ]);
 
