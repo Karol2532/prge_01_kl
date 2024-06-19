@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useTable, useSortBy } from "react-table";
+import { Link } from "react-router-dom";
+import workplaceicon from "./workplaces.png";
+import locationicon from "./location.png";
 import "./worker_list.css"; // Plik CSS do stylizacji tabeli
 
 function WorkersTable() {
@@ -68,7 +71,25 @@ function WorkersTable() {
 
   return (
     <div className="table-container">
-      <h1>Baza danych o pracownikach</h1>
+      <div className="table-header">
+        <h1>Baza danych o pracownikach</h1>
+        <div className="buttons">
+          <Link to="/services/map">
+            <img
+              className="locationicon"
+              src={locationicon}
+              alt="lokalizacja"
+            />
+          </Link>
+          <Link to="/services/map">
+            <img
+              className="workplaceicon"
+              src={workplaceicon}
+              alt="miejsca pracy"
+            />
+          </Link>
+        </div>
+      </div>
       <table {...getTableProps()} className="workers-table">
         <thead>
           {headerGroups.map((headerGroup) => (

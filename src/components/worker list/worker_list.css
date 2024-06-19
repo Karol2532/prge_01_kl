@@ -1,5 +1,39 @@
 .table-container {
-  padding: 20px;
+  margin: 20px;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.workplaceicon {
+  width: 50px;
+  height: 50px;
+}
+
+.workplaceicon:hover {
+  background-color: #00ffff;
+  border: 1px solid #000000;
+  border-radius: 6px;
+}
+
+.locationicon {
+  width: 50px;
+  height: 50px;
+}
+
+.locationicon:hover {
+  background-color: #00ffff;
+  border: 1px solid #000000;
+  border-radius: 6px;
 }
 
 .workers-table {
@@ -9,19 +43,11 @@
 
 .workers-table th,
 .workers-table td {
-  border: 1px solid #ddd;
+  border: 1px solid #c1c1c1;
   padding: 8px;
 }
 
 .workers-table th {
-  padding-top: 12px;
-  padding-bottom: 12px;
+  background-color: #00ffff;
   text-align: left;
-  background-color: #f2f2f2;
-  color: black;
-  cursor: pointer;
-}
-
-.workers-table th span {
-  margin-left: 8px;
 }
