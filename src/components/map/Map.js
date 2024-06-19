@@ -6,9 +6,13 @@ import {
   TileLayer,
   WMSTileLayer,
   GeoJSON,
+  Marker,
+  Popup,
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import axios from "axios";
+
+// import MarkerPlacement from "./MarkerPlacement";
 
 function Map() {
   const [workers, setWorkers] = useState(null);
@@ -92,6 +96,7 @@ function Map() {
               ""
             )}
           </LayersControl.Overlay>
+          {/* <MarkerPlacement /> */}
         </LayersControl>
       </MapContainer>
     </div>
