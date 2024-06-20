@@ -31,10 +31,12 @@
   top: 10px;
   right: 10px;
   padding: 10px;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
 }
 
 .home_top_about:hover {
   color: black;
+  transform: scale(1.1);
 }
 
 .home_content {
@@ -79,10 +81,12 @@
   cursor: pointer;
   margin-top: 50px;
   margin-left: 550px;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
 }
 
 .home_right_button:hover {
-  background-color: #ffffff;
+  background-color: #e0e0e0;
   color: #00ffff;
   border: 2px solid #00ffff;
+  transform: scale(1.1);
 }

@@ -6,6 +6,7 @@ import Map from "./components/map/Map";
 import Dashboard from "./components/dashboard/Dashboard";
 import WorkersTable from "./components/worker list/worker_list";
 import WorkplacesTable from "./components/workplace list/workplace_list";
+import About from "./components/about/about";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
   {
     path: "/services/workplacelist",
     element: <WorkplacesTable />,
+  },
+  {
+    path: "/services/about",
+    element: <About />,
   },
 ]);
 

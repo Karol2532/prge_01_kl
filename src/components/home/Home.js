@@ -6,7 +6,7 @@ import computerIcon from "./komputer2.jpg";
 function Home() {
   return (
     <div className="home">
-      <Link to="services">
+      <Link to="services/about">
         <button className="home_top_about">O serwerze</button>
       </Link>
       <div className="home_content">

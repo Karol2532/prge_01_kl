@@ -17,34 +17,40 @@
 .workplaceicon {
   width: 50px;
   height: 50px;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
 }
 
 .workplaceicon:hover {
   background-color: #00ffff;
   border: 1px solid #000000;
   border-radius: 6px;
+  transform: scale(1.1);
 }
 
 .locationicon {
   width: 50px;
   height: 50px;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
 }
 
 .locationicon:hover {
   background-color: #00ffff;
   border: 1px solid #000000;
   border-radius: 6px;
+  transform: scale(1.1);
 }
 
 .servicesicon {
   width: 55px;
   height: 55px;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
 }
 
 .servicesicon:hover {
   background-color: #00ffff;
   border: 1px solid #000000;
   border-radius: 6px;
+  transform: scale(1.1);
 }
 
 .workers-table {

@@ -32,11 +32,13 @@
   background-color: #00ffff;
   border-radius: 10px;
   margin-bottom: 10px;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
 }
 .services_icon:hover {
   background-color: #ffffff;
   color: #00ffff;
   border: 8px solid #00ffff;
+  transform: scale(1.1);
 }
 .worker3icon {
   width: 500px;
@@ -55,5 +57,5 @@
   font-size: 24px;
   color: #000;
   position: absolute;
-  margin: 250px;
+  margin: 260px;
 }
