@@ -4,6 +4,7 @@ import { useTable, useSortBy } from "react-table";
 import { Link } from "react-router-dom";
 import workplace1icon from "./workplaces.png";
 import location1icon from "./location.png";
+import services1icon from "./services.png";
 import "./worker_list.css"; // Plik CSS do stylizacji tabeli
 
 function WorkersTable() {
@@ -87,6 +88,9 @@ function WorkersTable() {
               src={workplace1icon}
               alt="miejsca pracy"
             />
+          </Link>
+          <Link to="/services">
+            <img className="servicesicon" src={services1icon} alt="usługi" />
           </Link>
         </div>
       </div>

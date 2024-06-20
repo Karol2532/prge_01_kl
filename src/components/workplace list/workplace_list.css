@@ -36,6 +36,17 @@
   border-radius: 6px;
 }
 
+.servicesicon {
+  width: 55px;
+  height: 55px;
+}
+
+.servicesicon:hover {
+  background-color: #00ffff;
+  border: 1px solid #000000;
+  border-radius: 6px;
+}
+
 .workplaces-table {
   width: 100%;
   border-collapse: collapse;
