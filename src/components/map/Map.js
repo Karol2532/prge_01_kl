@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./Map.css";
+import workplace1icon from "./workplaces.png";
+import worker2icon from "./workers.png";
+import services1icon from "./services.png";
+import { Link } from "react-router-dom";
 import {
   LayersControl,
   MapContainer,
@@ -117,6 +121,17 @@ function Map() {
           </LayersControl.Overlay>
         </LayersControl>
       </MapContainer>
+      <div className="button">
+        <Link to="/services/workerlist">
+          <img className="worker2icon" src={worker2icon} alt="pracownicy" />
+        </Link>
+        <Link to="/services/workplacelist">
+          <img className="workplace1icon" src={workplace1icon} alt="oddziały" />
+        </Link>
+        <Link to="/services">
+          <img className="services1icon" src={services1icon} alt="usługi" />
+        </Link>
+      </div>
     </div>
   );
 }

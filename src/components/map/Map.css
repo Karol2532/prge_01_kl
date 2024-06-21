@@ -2,3 +2,60 @@
   width: 100vw;
   height: 100vh;
 }
+
+.button {
+  position: absolute;
+  display: flex;
+  top: 20px;
+  left: 60px;
+  z-index: 1000;
+  gap: 10px;
+}
+
+.worker2icon {
+  width: 50px;
+  height: 50px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 6px;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+.worker2icon:hover {
+  background-color: #00ffff;
+  border: 1px solid #000000;
+  border-radius: 6px;
+  transform: scale(1.1);
+}
+
+.workplace1icon {
+  width: 50px;
+  height: 50px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 6px;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+.workplace1icon:hover {
+  background-color: #00ffff;
+  border: 1px solid #000000;
+  border-radius: 6px;
+  transform: scale(1.1);
+}
+
+.services1icon {
+  width: 50px;
+  height: 50px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 6px;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+.services1icon:hover {
+  background-color: #00ffff;
+  border: 1px solid #000000;
+  border-radius: 6px;
+  transform: scale(1.1);
+}

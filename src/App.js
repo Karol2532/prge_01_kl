@@ -3,16 +3,9 @@ import "./App.css";
 import Home from "./components/home/Home";
 import Services from "./components/services/Services";
 import Map from "./components/map/Map";
-<<<<<<< HEAD
-import Dashboard from "./components/dashboard/Dashboard";
 import WorkersTable from "./components/worker list/worker_list";
 import WorkplacesTable from "./components/workplace list/workplace_list";
 import About from "./components/about/about";
-=======
-import WorkersTable from "./components/worker list/worker_list";
-import WorkplacesTable from "./components/workplace list/workplace_list";
-import About from "./components/about/";
->>>>>>> map-marker
 
 const router = createBrowserRouter([
   {
@@ -26,18 +19,6 @@ const router = createBrowserRouter([
   {
     path: "/services/map",
     element: <Map />,
-  },
-  {
-    path: "/services/workerlist",
-    element: <WorkersTable />,
-  },
-  {
-    path: "/services/workplacelist",
-    element: <WorkplacesTable />,
-  },
-  {
-    path: "/services/about",
-    element: <About />,
   },
   {
     path: "/services/workerlist",

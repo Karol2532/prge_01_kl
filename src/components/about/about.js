@@ -7,7 +7,7 @@ import serverImage3 from "./zdj3.png"; // Zamień na odpowiednią nazwę pliku
 import serverImage4 from "./zdj4.png";
 import serverImage6 from "./zdj5.png";
 import serverImage7 from "./zdj6.png";
-import serverImage5 from "./2.jpeg";
+import serverImage5 from "./2.png";
 import backicon from "./back.png";
 
 function About() {
