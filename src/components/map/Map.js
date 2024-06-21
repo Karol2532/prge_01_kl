@@ -4,15 +4,14 @@ import {
   LayersControl,
   MapContainer,
   TileLayer,
-  WMSTileLayer,
+  // WMSTileLayer,
   GeoJSON,
-  Marker,
-  Popup,
+  // Marker,
+  // Popup,
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import axios from "axios";
-
-import MarkerPlacement from "./MarkerPlacement";
+import { workerPin, workplacePin, pointToLayer } from "./Icon.js";
 
 function Map() {
   const [workers, setWorkers] = useState(null);
@@ -34,7 +33,11 @@ function Map() {
         const response = await axios.get(
           "http://localhost:8080/geoserver/prge/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=prge%3Aworkers&maxFeatures=50&outputFormat=application%2Fjson"
         );
-        setWorkers(response.data);
+        const data = response.data;
+        data.features.forEach((feature) => {
+          feature.properties.type = "worker";
+        });
+        setWorkers(data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -61,7 +64,11 @@ function Map() {
         const response = await axios.get(
           "http://localhost:8080/geoserver/prge/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=prge%3Aworkplaces&maxFeatures=50&outputFormat=application%2Fjson"
         );
-        setWorkplaces(response.data);
+        const data = response.data;
+        data.features.forEach((feature) => {
+          feature.properties.type = "workplace";
+        });
+        setWorkplaces(data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -69,21 +76,11 @@ function Map() {
     getData();
   }, []);
 
-  const workerPoints = workers
-    ? workers.features.map((feature) => ({
-        lat: feature.geometry.coordinates[1],
-        lng: feature.geometry.coordinates[0],
-        name: feature.properties.name,
-        lastname: feature.properties.lastname,
-        city: feature.properties.city,
-      }))
-    : [];
-
   return (
     <div className="map">
       <MapContainer center={[52.27, 19.24]} zoom={6}>
         <LayersControl>
-          <LayersControl.BaseLayer name="OSM">
+          <LayersControl.BaseLayer checked name="OSM">
             <TileLayer url="https://tile.openstreetmap.org/{z}/{x}/{y}.png" />
           </LayersControl.BaseLayer>
           <LayersControl.BaseLayer name="Google">
@@ -94,20 +91,30 @@ function Map() {
           </LayersControl.BaseLayer>
           <LayersControl.Overlay checked name="Pracownicy firmy">
             {workers ? (
-              <GeoJSON data={workers} onEachFeature={makePopup} />
+              <GeoJSON
+                data={workers}
+                pointToLayer={(feature, latlng) =>
+                  pointToLayer(feature, latlng, workerPin)
+                }
+                onEachFeature={makePopup}
+              />
             ) : (
               ""
             )}
           </LayersControl.Overlay>
           <LayersControl.Overlay checked name="Oddziały firmy">
             {workplaces ? (
-              <GeoJSON data={workplaces} onEachFeature={makePopup2} />
+              <GeoJSON
+                data={workplaces}
+                pointToLayer={(feature, latlng) =>
+                  pointToLayer(feature, latlng, workplacePin)
+                }
+                onEachFeature={makePopup2}
+              />
             ) : (
               ""
             )}
           </LayersControl.Overlay>
-          <MarkerPlacement points={workerPoints} />
-          {/* <MarkerPlacement /> */}
         </LayersControl>
       </MapContainer>
     </div>
